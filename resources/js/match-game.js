@@ -52,15 +52,15 @@ MatchGame.renderCards = function(cardValues, $game) {
     $game.data('flipped-cards', []);
  	$game.data('pairs-found', 0);
 	for (var i = 0; i < cardValues.length; i++) {
-		var data = {
-			value: cardValues[i],
-			color: cardColours[cardValues[i] - 1],
-			flipped: false
-		};
-		
-		var $card = $('<div class="col-xs-3 card"></div>');
-		$card.data(data); 
-		$game.append($card);
+            var $card = $('<div class="col-xs-3 card"></div>');
+	    var data = {
+		value: cardValues[i],
+		color: cardColours[cardValues[i] - 1],
+		flipped: false
+	    };
+	
+	    $card.data(data); 
+	    $game.append($card);
 	}
 	
 	$('.card').click(function() {
